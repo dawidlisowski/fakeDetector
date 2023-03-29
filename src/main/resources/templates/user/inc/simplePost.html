@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:fragment="simplePost(postData)" class="card mb-4">
+        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+        <div class="card-body">
+            <div class="small text-muted">
+                Dodany <strong th:text="${postData.getCreateDate()}"></strong> przez
+                <span th:text="${postData.getAuthor()}"></span>
+            </div>
+            <h2 class="card-title" th:text="${postData.getTitle()}"></h2>
+            <p class="card-text" th:text="${postData.getNewsFakeProvement()}"></p>
+            <a th:href="'/post/' + ${postData.getId()}" class="btn btn-primary">Read more →</a>
+        </div>
+    </div>
+</html>
